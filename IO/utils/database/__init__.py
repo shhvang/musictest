@@ -1,2 +1,2 @@
-from mongo import *
-from database import *
+from .mongo import *
+from .database import *
