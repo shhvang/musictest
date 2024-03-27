@@ -6,7 +6,7 @@ from IO import app
 from IO.utils.database import get_lang, set_lang
 from IO.utils.decorators import ActualAdminCB, language, languageCB
 from config import BANNED_USERS
-from strings import get_string, languages_present
+from Locales import get_string, languages_present
 
 
 def lanuages_keyboard(_):

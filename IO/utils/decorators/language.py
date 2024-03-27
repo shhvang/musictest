@@ -1,4 +1,4 @@
-from strings import get_string
+from Locales import get_string
 
 from IO import app
 from IO.utils.misc import SUDOERS

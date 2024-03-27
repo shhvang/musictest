@@ -22,7 +22,7 @@ from IO.utils.database import (
 )
 from IO.utils.inline import botplaylist_markup
 from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
-from strings import get_string
+from Locales import get_string
 
 links = {}
 

@@ -9,7 +9,7 @@ from IO.utils.database import (
     maintenance_off,
     maintenance_on,
 )
-from strings import get_string
+from Locales import get_string
 
 
 @app.on_message(filters.command(["maintenance"]) & SUDOERS)

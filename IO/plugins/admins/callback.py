@@ -33,7 +33,7 @@ from config import (
     votemode,
 )
 import config
-from strings import get_string
+from Locales import get_string
 
 checker = {}
 upvoters = {}
