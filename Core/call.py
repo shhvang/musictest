@@ -21,9 +21,9 @@ from pytgcalls.types.stream import AudioQuality, VideoQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from IOMusic import LOGGER, YouTube, app
-from IOMusic.misc import db
-from IOMusic.utils.database import (
+from IO import LOGGER, YouTube, app
+from IO.utils.misc import db
+from IO.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_lang,
@@ -35,12 +35,12 @@ from IOMusic.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from IOMusic.utils.exceptions import AssistantErr
-from IOMusic.utils.formatters import check_duration, seconds_to_min, speed_converter
-from IOMusic.utils.inline.play import stream_markup
-from IOMusic.utils.stream.autoclear import auto_clean
-from IOMusic.utils.thumbnails import get_thumb
-from strings import get_string
+from IO.utils.exceptions import AssistantErr
+from IO.utils.formatters import check_duration, seconds_to_min, speed_converter
+from IO.utils.inline.play import stream_markup
+from IO.utils.stream.autoclear import auto_clean
+from IO.utils.thumbnails import get_thumb
+from Locales import get_string
 
 autoend = {}
 counter = {}
