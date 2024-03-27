@@ -36,7 +36,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO","https://github.com/shhvang/IO")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO","https://github.com/shhvang/iMusic")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "alpha")
 GIT_TOKEN = getenv("GIT_TOKEN", None) 
 # Fill this variable if your upstream repository is private
