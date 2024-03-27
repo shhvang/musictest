@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from IO import LOGGER, app, userbot
-from Core.call import IO
+from Core.call import IOMusic
 from IO.utils.misc import sudo
 from IO.plugins import ALL_MODULES
 from IO.utils.database import get_banned_users, get_gbanned
@@ -38,9 +38,9 @@ async def init():
         importlib.import_module("IO.plugins" + all_module)
     LOGGER("IO.plugins").info("Successfully Imported Modules...")
     await userbot.start()
-    await IO.start()
+    await IOMusic.start()
     try:
-        await IO.stream_call("https://graph.org/file/ec8a35dd5f1ef90947167.mp4")
+        await IOMusic.stream_call("https://graph.org/file/ec8a35dd5f1ef90947167.mp4")
     except NoActiveGroupCall:
         LOGGER("IO").error(
             "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
@@ -48,7 +48,7 @@ async def init():
         exit()
     except:
         pass
-    await IO.decorators()
+    await IOMusic.decorators()
     LOGGER("IO").info(
         "IO Music Bot Started Successfully"
     )
