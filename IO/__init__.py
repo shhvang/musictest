@@ -1,5 +1,5 @@
 from Core.io import IO
-from Core.directories import dirr
+from Core.dir import dirr
 from Core.git import git
 from Core.assistant import Userbot
 from IO.utils.misc import dbb, heroku, sudo
