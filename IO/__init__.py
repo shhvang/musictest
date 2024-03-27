@@ -1,7 +1,7 @@
 from Core.io import IO
 from Core.dir import dirr
 from Core.git import git
-from Core.assistant import Userbot
+from Core.assistant import assistant
 from IO.utils.misc import dbb, heroku, sudo
 
 from Core.logging import LOGGER
@@ -12,7 +12,7 @@ dbb()
 heroku()
 
 app = IO()
-userbot = Userbot()
+userbot = assistant()
 
 
 from .platforms import *
