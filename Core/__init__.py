@@ -11,8 +11,7 @@ dbb()
 heroku()
 
 app = IOS()
-assistant = Userbot()
-
+userbot = Userbot()
 
 from .platforms import *
 
