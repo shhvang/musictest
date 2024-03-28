@@ -53,6 +53,7 @@ class Userbot(Client):
             try:
                 await self.one.join_chat("IOSupportGroup")
                 await self.one.join_chat("IOChats")
+                await self.one.join_chat("IOpacity")
             except:
                 pass
             assistants.append(1)
@@ -74,6 +75,7 @@ class Userbot(Client):
             try:
                 await self.two.join_chat("IOSupportGroup")
                 await self.two.join_chat("IOChats")
+                await self.two.join_chat("IOpacity")
             except:
                 pass
             assistants.append(2)
@@ -95,6 +97,7 @@ class Userbot(Client):
             try:
                 await self.three.join_chat("IOSupportGroup")
                 await self.three.join_chat("IOChats")
+                await self.three.join_chat("IOpacity")
             except:
                 pass
             assistants.append(3)
@@ -116,6 +119,7 @@ class Userbot(Client):
             try:
                 await self.four.join_chat("IOSupportGroup")
                 await self.four.join_chat("IOChats")
+                await self.four.join_chat("IOpacity")
             except:
                 pass
             assistants.append(4)
@@ -137,6 +141,7 @@ class Userbot(Client):
             try:
                 await self.five.join_chat("IOSupportGroup")
                 await self.five.join_chat("IOChats")
+                await self.five.join_chat("IOpacity")
             except:
                 pass
             assistants.append(5)
