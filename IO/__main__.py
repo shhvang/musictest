@@ -5,8 +5,7 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from IO import LOGGER, app, userbot
-from Core.call import IOMusic
+from Core import LOGGER, app, assistant, IOMusic
 from IO.utils.misc import sudo
 from IO.plugins import ALL_MODULES
 from IO.utils.database import get_banned_users, get_gbanned
@@ -37,7 +36,7 @@ async def init():
     for all_module in ALL_MODULES:
         importlib.import_module("IO.plugins" + all_module)
     LOGGER("IO.plugins").info("Successfully Imported Modules...")
-    await userbot.start()
+    await assistant.start()
     await IOMusic.start()
     try:
         await IOMusic.stream_call("https://graph.org/file/ec8a35dd5f1ef90947167.mp4")
