@@ -17,7 +17,7 @@ app = IOS()
 assistant = Userbot()
 
 
-from IO.platforms import *
+from .platforms import *
 
 Spotify = SpotifyAPI()
 Telegram = TeleAPI()
