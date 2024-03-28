@@ -107,11 +107,11 @@ def ActualAdminCB(mystic):
     return wrapper
 
 def AdminRightsCheck(mystic):
-    async def wrapper(client, message, _, chat_id=None):
+    async def wrapper(client, message):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    text=f"{app.mention} is under maintenance, Please visit <a href={SUPPORT_CHAT}>Support Chat</a> to know the reason.",
+                    text=f"{app.mention} is under maintenance, Please visit <a href={config.SUPPORT_CHAT}>Support Chat</a> to know the reason.",
                     disable_web_page_preview=True,
                 )
 
@@ -137,7 +137,7 @@ def AdminRightsCheck(mystic):
                 ]
             )
             return await message.reply_text(_["general_3"], reply_markup=upl)
-        if message.command and message.command[0][0] == "c":
+        if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
                 return await message.reply_text(_["setting_7"])
@@ -159,11 +159,11 @@ def AdminRightsCheck(mystic):
                     if message.from_user.id not in admins:
                         if await is_skipmode(message.chat.id):
                             upvote = await get_upvote_count(chat_id)
-                            text = f"""<b>Admin Rights Required</b>
+                            text = f"""Admin Rights Required
 
-Refresh Admincache : /reload
+Refresh admin cache by : /reload
 
-» {upvote} votes needed to perform this action"""
+{upvote} votes needed to perform this action"""
 
                             command = message.command[0]
                             if command[0] == "c":
@@ -175,7 +175,7 @@ Refresh Admincache : /reload
                                 [
                                     [
                                         InlineKeyboardButton(
-                                            text="Vote",
+                                            text="ᴠᴏᴛᴇ",
                                             callback_data=f"ADMIN  UpVote|{chat_id}_{MODE}",
                                         ),
                                     ]
@@ -200,3 +200,4 @@ Refresh Admincache : /reload
         return await mystic(client, message, _, chat_id)
 
     return wrapper
+
