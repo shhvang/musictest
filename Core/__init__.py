@@ -9,7 +9,6 @@ dirr()
 git()
 dbb()
 heroku()
-sudo()
 
 app = IOS()
 assistant = Userbot()
