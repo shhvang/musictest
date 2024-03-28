@@ -1,7 +1,8 @@
 import config
 from Locales import get_string
 
-from Core import SUDOERS, app
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import get_lang, is_maintenance
 
 
