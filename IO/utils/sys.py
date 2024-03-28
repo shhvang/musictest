@@ -2,7 +2,7 @@ import time
 
 import psutil
 
-from .misc import _boot_
+from Core.misc import _boot_
 from .formatters import get_readable_time
 
 

@@ -2,9 +2,9 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from IO import YouTube, app
-from Core.call import IO
-from IO.utils.misc import db
+from Core import YouTube, app
+from Core.call import IOMusic
+from Core.misc import db
 from IO.utils.database import get_loop
 from IO.utils.decorators import AdminRightsCheck
 from IO.utils.inline import close_markup, stream_markup
@@ -48,7 +48,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await IO.stop_stream(chat_id)
+                                    await IOMusic.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -75,7 +75,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await IO.stop_stream(chat_id)
+                    return await IOMusic.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -86,7 +86,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await IO.stop_stream(chat_id)
+                return await IOMusic.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -111,7 +111,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await IO.skip_stream(chat_id, link, video=status, image=image)
+            await IOMusic.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -144,7 +144,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await IO.skip_stream(chat_id, file_path, video=status, image=image)
+            await IOMusic.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -164,7 +164,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await IO.skip_stream(chat_id, videoid, video=status)
+            await IOMusic.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -184,7 +184,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await IO.skip_stream(chat_id, queued, video=status, image=image)
+            await IOMusic.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":

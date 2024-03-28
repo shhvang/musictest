@@ -1,9 +1,9 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
-from Core.call import IO
-from IO.utils.misc import SUDOERS, db
+from Core import app
+from Core.call import IOMusic
+from Core.misc import SUDOERS, db
 from IO.utils import AdminRightsCheck
 from IO.utils.database import is_active_chat, is_nonadmin_chat
 from IO.utils.decorators.language import languageCB
@@ -94,7 +94,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         text=_["admin_32"].format(CallbackQuery.from_user.mention),
     )
     try:
-        await IO.speedup_stream(
+        await IOMusic.speedup_stream(
             chat_id,
             file_path,
             speed,

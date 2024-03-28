@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import blacklist_chat, blacklisted_chats, whitelist_chat
 from IO.utils.decorators.language import language
 from config import BANNED_USERS

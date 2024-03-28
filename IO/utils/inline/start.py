@@ -1,7 +1,7 @@
 from pyrogram.types import InlineKeyboardButton
 
 import config
-from IO import app
+from Core import app
 
 
 def start_panel(_):

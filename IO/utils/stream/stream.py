@@ -5,9 +5,9 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from IO import Carbon, YouTube, app
-from Core.call import IO
-from IO.utils.misc import db
+from Core import Carbon, YouTube, app
+from Core.call import IOMusic
+from Core.misc import db
 from IO.utils.database import add_active_video_chat, is_active_chat
 from IO.utils.exceptions import AssistantErr
 from IO.utils.inline import aq_markup, close_markup, stream_markup
@@ -32,7 +32,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await IO.force_stop_stream(chat_id)
+        await IOMusic.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -79,7 +79,7 @@ async def stream(
                     )
                 except:
                     raise AssistantErr(_["play_14"])
-                await IO.join_call(
+                await IOMusic.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -165,7 +165,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await IO.join_call(
+            await IOMusic.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -227,7 +227,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await IO.join_call(chat_id, original_chat_id, file_path, video=status)
+            await IOMusic.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -283,7 +283,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await IO.join_call(
+            await IOMusic.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -341,7 +341,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await IO.join_call(
+            await IOMusic.join_call(
                 chat_id,
                 original_chat_id,
                 link,

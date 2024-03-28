@@ -3,8 +3,8 @@ import random
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
-from IO.utils.misc import db
+from Core import app
+from Core.misc import db
 from IO.utils.decorators import AdminRightsCheck
 from IO.utils.inline import close_markup
 from config import BANNED_USERS

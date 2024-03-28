@@ -5,7 +5,7 @@ from pyrogram.types import (
 )
 from youtubesearchpython.__future__ import VideosSearch
 
-from IO import app
+from Core import app
 from IO.utils.inlinequery import answer
 from config import BANNED_USERS
 

@@ -4,8 +4,8 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils import get_readable_time
 from IO.utils.database import (
     add_banned_user,
@@ -16,7 +16,7 @@ from IO.utils.database import (
     remove_banned_user,
 )
 from IO.utils.decorators.language import language
-from IO.utils.extraction import extract_user
+from IO.utils.extractions import extract_user
 from config import BANNED_USERS
 
 

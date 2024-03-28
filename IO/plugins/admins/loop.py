@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
+from Core import app
 from IO.utils.database import get_loop, set_loop
 from IO.utils.decorators import AdminRightsCheck
 from IO.utils.inline import close_markup

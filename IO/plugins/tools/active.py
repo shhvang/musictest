@@ -2,8 +2,8 @@ from pyrogram import filters
 from pyrogram.types import Message
 from unidecode import unidecode
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import (
     get_active_chats,
     get_active_video_chats,

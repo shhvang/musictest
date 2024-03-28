@@ -4,8 +4,8 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import (
     get_active_chats,
     get_authuser_names,
@@ -117,7 +117,7 @@ async def braodcast_message(client, message, _):
     if "-assistant" in message.text:
         aw = await message.reply_text(_["broad_5"])
         text = _["broad_6"]
-        from Core.assistant import assistants
+        from Core.userbot import assistants
 
         for num in assistants:
             sent = 0

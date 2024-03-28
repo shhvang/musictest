@@ -1,6 +1,6 @@
 import asyncio
 
-from IO.utils.misc import db
+from Core.misc import db
 from IO.utils.database import get_active_chats, is_music_playing
 
 

@@ -6,8 +6,8 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 
 import config
-from IO import app
-from IO.utils.misc import db
+from Core import app
+from Core.misc import db
 from IO.utils import IOBin, get_channeplayCB, seconds_to_min
 from IO.utils.database import get_cmode, is_active_chat, is_music_playing
 from IO.utils.decorators.language import language, languageCB

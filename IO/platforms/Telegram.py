@@ -6,7 +6,7 @@ from typing import Union
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
 import config
-from IO import app
+from Core import app
 from IO.utils.formatters import (
     check_duration,
     convert_bytes,

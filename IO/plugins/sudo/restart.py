@@ -10,8 +10,8 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from IO import app
-from IO.utils.misc import HAPP, SUDOERS, XCB
+from Core import app
+from Core.misc import HAPP, SUDOERS, XCB
 from IO.utils.database import (
     get_active_chats,
     remove_active_chat,

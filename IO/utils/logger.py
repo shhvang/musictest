@@ -1,6 +1,6 @@
 from pyrogram.enums import ParseMode
 
-from IO import app
+from Core import app
 from IO.utils.database import is_on_off
 from config import LOG_GROUP_ID
 

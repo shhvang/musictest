@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import autoend_off, autoend_on
 
 

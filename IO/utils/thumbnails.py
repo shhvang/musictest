@@ -8,7 +8,6 @@ from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
                  ImageFont, ImageOps)
 from youtubesearchpython.__future__ import VideosSearch
 
-from IO import app
 from config import YOUTUBE_IMG_URL
 
 

@@ -5,9 +5,9 @@ import heroku3
 from pyrogram import filters
 
 import config
-from IO.utils.database import mongodb
+from Core.mongo import mongodb
 
-from Core.logging import LOGGER
+from .logging import LOGGER
 
 SUDOERS = filters.user()
 

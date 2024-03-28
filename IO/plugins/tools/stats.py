@@ -9,9 +9,9 @@ from pyrogram.types import InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from IO import app
-from IO.core.userbot import assistants
-from IO.utils.misc import SUDOERS, mongodb
+from Core import app
+from Core.userbot import assistants
+from Core.misc import SUDOERS, mongodb
 from IO.plugins import ALL_MODULES
 from IO.utils.database import get_served_chats, get_served_users, get_sudoers
 from IO.utils.decorators.language import language, languageCB

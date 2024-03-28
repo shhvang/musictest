@@ -1,9 +1,9 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import YouTube, app
-from Core.call import IO
-from IO.utils.misc import db
+from Core import YouTube, app
+from Core.call import IOMusic
+from Core.misc import db
 from IO.utils import AdminRightsCheck, seconds_to_min
 from IO.utils.inline import close_markup
 from config import BANNED_USERS
@@ -56,7 +56,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     if "index_" in file_path:
         file_path = playing[0]["vidid"]
     try:
-        await IO.seek_stream(
+        await IOMusic.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),

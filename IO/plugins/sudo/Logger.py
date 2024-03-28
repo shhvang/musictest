@@ -1,7 +1,7 @@
 from pyrogram import filters
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import add_off, add_on
 from IO.utils.decorators.language import language
 

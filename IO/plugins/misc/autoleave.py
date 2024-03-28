@@ -2,8 +2,8 @@ import asyncio
 from datetime import datetime
 
 import config
-from IO import app
-from Core.call import IO, autoend
+from Core import app
+from Core.call import IOMusic, autoend
 from IO.utils.database import (get_client, is_active_chat,
                                        is_autoend)
 
@@ -13,7 +13,7 @@ async def auto_leave():
         while not await asyncio.sleep(
             config.AUTO_LEAVE_ASSISTANT_TIME
         ):
-            from Core.assistant import assistants
+            from Core.userbot import assistants
 
             for num in assistants:
                 client = await get_client(num)
@@ -29,8 +29,9 @@ async def auto_leave():
                             chat_id = i.chat.id
                             if (
                                 chat_id != config.LOG_GROUP_ID
-                                and i.chat.id != -1001762979765
-                                and i.chat.id != -1001810919938
+                                and i.chat.id != -1001901688853
+                                and i.chat.id != -1002125745199
+                                and i.chat.id != -1002128332513
                             ):
                                 if left == 20:
                                     continue
@@ -63,7 +64,7 @@ async def auto_end():
                     continue
                 autoend[chat_id] = {}
                 try:
-                    await IO.stop_stream(chat_id)
+                    await IOMusic.stop_stream(chat_id)
                 except:
                     continue
                 try:

@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
+from Core import app
 from IO.utils import extract_user, int_to_alpha
 from IO.utils.database import (
     delete_authuser,

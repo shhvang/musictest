@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from IO import app
+from Core import app
 from IO.utils.database import get_playmode, get_playtype, is_nonadmin_chat
 from IO.utils.decorators import language
 from IO.utils.inline.settings import playmode_users_markup

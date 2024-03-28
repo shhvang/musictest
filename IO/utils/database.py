@@ -1,13 +1,13 @@
 import random
 from typing import Dict, List, Union
 
-from Core.assistant import assistant
-from .mongo import mongodb
+from Core import userbot
+from Core.mongo import mongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
 autoenddb = mongodb.autoend
-assdb = mongodb.assistant
+assdb = mongodb.assistants
 blacklist_chatdb = mongodb.blacklistChat
 blockeddb = mongodb.blockedusers
 chatsdb = mongodb.chats
@@ -46,15 +46,15 @@ async def get_assistant_number(chat_id: int) -> str:
 
 async def get_client(assistant: int):
     if int(assistant) == 1:
-        return assistant.one
+        return userbot.one
     elif int(assistant) == 2:
-        return assistant.two
+        return userbot.two
     elif int(assistant) == 3:
-        return assistant.three
+        return userbot.three
     elif int(assistant) == 4:
-        return assistant.four
+        return userbot.four
     elif int(assistant) == 5:
-        return assistant.five
+        return userbot.five
 
 
 async def set_assistant_new(chat_id, number):
@@ -67,50 +67,50 @@ async def set_assistant_new(chat_id, number):
 
 
 async def set_assistant(chat_id):
-    from Core.assistant import assistant
+    from Core import assistants
 
-    ran_assistant = random.choice(assistant)
+    ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
     await assdb.update_one(
         {"chat_id": chat_id},
         {"$set": {"assistant": ran_assistant}},
         upsert=True,
     )
-    assistant = await get_client(ran_assistant)
-    return assistant
+    userbot = await get_client(ran_assistant)
+    return userbot
 
 
 async def get_assistant(chat_id: int) -> str:
-    from Core.assistant import assistant
+    from Core import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
         dbassistant = await assdb.find_one({"chat_id": chat_id})
         if not dbassistant:
-            assistant = await set_assistant(chat_id)
-            return assistant
+            userbot = await set_assistant(chat_id)
+            return userbot
         else:
             got_assis = dbassistant["assistant"]
-            if got_assis in assistant:
+            if got_assis in assistants:
                 assistantdict[chat_id] = got_assis
-                assistant = await get_client(got_assis)
-                return assistant
+                userbot = await get_client(got_assis)
+                return userbot
             else:
-                assistant = await set_assistant(chat_id)
-                return assistant
+                userbot = await set_assistant(chat_id)
+                return userbot
     else:
-        if assistant in assistant:
-            assistant = await get_client(assistant)
-            return assistant
+        if assistant in assistants:
+            userbot = await get_client(assistant)
+            return userbot
         else:
-            assistant = await set_assistant(chat_id)
-            return assistant
+            userbot = await set_assistant(chat_id)
+            return userbot
 
 
 async def set_calls_assistant(chat_id):
-    from Core.assistant import assistant
+    from Core import assistants
 
-    ran_assistant = random.choice(assistant)
+    ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
     await assdb.update_one(
         {"chat_id": chat_id},
@@ -121,7 +121,7 @@ async def set_calls_assistant(chat_id):
 
 
 async def group_assistant(self, chat_id: int) -> int:
-    from Core.assistant import assistant
+    from Core import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -130,13 +130,13 @@ async def group_assistant(self, chat_id: int) -> int:
             assis = await set_calls_assistant(chat_id)
         else:
             assis = dbassistant["assistant"]
-            if assis in assistant:
+            if assis in assistants:
                 assistantdict[chat_id] = assis
                 assis = assis
             else:
                 assis = await set_calls_assistant(chat_id)
     else:
-        if assistant in assistant:
+        if assistant in assistants:
             assis = assistant
         else:
             assis = await set_calls_assistant(chat_id)

@@ -5,24 +5,20 @@ from typing import Union
 
 from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup
-from pytgcalls import PyTgCalls, StreamType
+from pytgcalls import PyTgCalls
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
     NoActiveGroupCall,
 )
 from pytgcalls import PyTgCalls
-from pytgcalls import idle
 from pytgcalls.types import MediaStream
 from ntgcalls import TelegramServerError
 from pytgcalls.types import Update
-from pytgcalls.types.stream.legacy import AudioPiped
-from pytgcalls.types.stream.legacy import AudioVideoPiped
 from pytgcalls.types.stream import AudioQuality, VideoQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from IO import LOGGER, YouTube, app
-from IO.utils.misc import db
+from Core import LOGGER, YouTube, app, db
 from IO.utils.database import (
     add_active_chat,
     add_active_video_chat,

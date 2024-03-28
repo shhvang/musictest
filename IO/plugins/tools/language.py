@@ -2,7 +2,7 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, Message
 
-from IO import app
+from Core import app
 from IO.utils.database import get_lang, set_lang
 from IO.utils.decorators import ActualAdminCB, language, languageCB
 from config import BANNED_USERS

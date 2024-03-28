@@ -8,7 +8,7 @@ from pyrogram.types import (
     Message,
 )
 
-from IO import app
+from Core import app
 from IO.utils.database import (
     add_nonadmin_chat,
     get_authuser,

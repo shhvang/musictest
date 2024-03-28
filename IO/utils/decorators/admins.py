@@ -1,8 +1,7 @@
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from IO import app
-from IO.utils.misc import SUDOERS, db
+from Core import SUDOERS, db, app
 from IO.utils.database import (
     get_authuser_names,
     get_cmode,

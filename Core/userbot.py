@@ -8,38 +8,38 @@ assistants = []
 assistantids = []
 
 
-class assistant(Client):
+class Userbot(Client):
     def __init__(self):
         self.one = Client(
-            name="IOA1",
+            name="IOAss1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
             no_updates=True,
         )
         self.two = Client(
-            name="IOA2",
+            name="IOAss2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
             no_updates=True,
         )
         self.three = Client(
-            name="IOA3",
+            name="IOAss3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
             no_updates=True,
         )
         self.four = Client(
-            name="IOA4",
+            name="IOAss4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
             no_updates=True,
         )
         self.five = Client(
-            name="IOA5",
+            name="IOAss5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
@@ -51,7 +51,7 @@ class assistant(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("IOSupportChat")
+                await self.one.join_chat("IOSupportGroup")
                 await self.one.join_chat("IOChats")
             except:
                 pass
@@ -72,7 +72,7 @@ class assistant(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("IOSupportChat")
+                await self.two.join_chat("IOSupportGroup")
                 await self.two.join_chat("IOChats")
             except:
                 pass
@@ -93,7 +93,7 @@ class assistant(Client):
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("IOSupportChat")
+                await self.three.join_chat("IOSupportGroup")
                 await self.three.join_chat("IOChats")
             except:
                 pass
@@ -114,7 +114,7 @@ class assistant(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("IOSupportChat")
+                await self.four.join_chat("IOSupportGroup")
                 await self.four.join_chat("IOChats")
             except:
                 pass
@@ -135,7 +135,7 @@ class assistant(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("IOSupportChat")
+                await self.five.join_chat("IOSupportGroup")
                 await self.five.join_chat("IOChats")
             except:
                 pass

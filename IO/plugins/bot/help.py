@@ -3,11 +3,11 @@ from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from IO import app
+from Core import app
 from IO.utils import help_pannel
 from IO.utils.database import get_lang
 from IO.utils.decorators.language import LanguageStart, languageCB
-from IO.utils.inline.help import help_back_markup, private_help_panel
+from IO.utils.inline.menu import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from Locales import get_string, menu
 

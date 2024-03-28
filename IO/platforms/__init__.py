@@ -1,3 +1,3 @@
 from .Spotify import SpotifyAPI
 from .Telegram import TeleAPI
-from .Youtube import YoutubeAPI
+from .Youtube import YouTubeAPI

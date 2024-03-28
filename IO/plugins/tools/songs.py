@@ -11,7 +11,7 @@ from pyrogram.types import (InlineKeyboardButton,
 
 from config import (BANNED_USERS, SONG_DOWNLOAD_DURATION,
                     SONG_DOWNLOAD_DURATION_LIMIT)
-from IO import YouTube, app
+from Core import YouTube, app
 from IO.utils.decorators.language import language, languageCB
 from IO.utils.formatters import convert_bytes
 from IO.utils.inline.song import song_markup

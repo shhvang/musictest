@@ -5,8 +5,8 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from Core import LOGGER, app, assistant, IOMusic
-from IO.utils.misc import sudo
+from Core import LOGGER, app, assistant, sudo
+from Core.call import IOMusic
 from IO.plugins import ALL_MODULES
 from IO.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS

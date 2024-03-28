@@ -8,7 +8,7 @@ from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
-from IO.utils.database.database import is_on_off
+from IO.utils.database import is_on_off
 from IO.utils.formatters import time_to_seconds
 
 
@@ -27,7 +27,7 @@ async def shell_cmd(cmd):
     return out.decode("utf-8")
 
 
-class YoutubeAPI:
+class YouTubeAPI:
     def __init__(self):
         self.base = "https://www.youtube.com/watch?v="
         self.regex = r"(?:youtube\.com|youtu\.be)"

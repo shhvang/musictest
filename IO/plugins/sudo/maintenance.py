@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from IO import app
-from IO.utils.misc import SUDOERS
+from Core import app
+from Core.misc import SUDOERS
 from IO.utils.database import (
     get_lang,
     is_maintenance,
@@ -12,7 +12,7 @@ from IO.utils.database import (
 from Locales import get_string
 
 
-@app.on_message(filters.command(["maintenance"]) & SUDOERS)
+@app.on_message(filters.command(["maintenance", "main"]) & SUDOERS)
 async def maintenance(client, message: Message):
     try:
         language = await get_lang(message.chat.id)

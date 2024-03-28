@@ -6,8 +6,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from IO import app
-from IO.utils.misc import _boot_
+from Core import app
+from Core.misc import _boot_
 from IO.plugins.sudo.sudoers import sudoers_list
 from IO.utils.database import (
     add_served_chat,

@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from IO import app
+from Core import app
 from IO.utils.database import set_cmode
 from IO.utils.decorators.admins import AdminActual
 from config import BANNED_USERS

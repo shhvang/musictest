@@ -9,8 +9,7 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from IO import YouTube, app
-from IO.utils.misc import SUDOERS
+from Core import SUDOERS, YouTube, app
 from IO.utils.database import (
     get_assistant,
     get_cmode,

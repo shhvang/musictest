@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from IO import YouTube, app
+from Core import YouTube, app
 from IO.utils.channelplay import get_channeplayCB
 from IO.utils.decorators.language import languageCB
 from IO.utils.stream.stream import stream

@@ -1,7 +1,7 @@
 import asyncio
 from typing import Union
 
-from IO.utils.misc import db
+from Core.misc import db
 from IO.utils.formatters import check_duration, seconds_to_min
 from config import autoclean, time_to_seconds
 
