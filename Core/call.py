@@ -18,8 +18,7 @@ from pytgcalls.types.stream import AudioQuality, VideoQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from Core.platforms import YouTube
-from Core import LOGGER, app
+from Core import LOGGER, YouTube, app
 from Core.misc import db
 from IO.utils.database import (
     add_active_chat,
