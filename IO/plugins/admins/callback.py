@@ -24,8 +24,6 @@ from IO.utils.stream.autoclear import auto_clean
 from IO.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
-    SOUNCLOUD_IMG_URL,
-    STREAM_IMG_URL,
     TELEGRAM_AUDIO_URL,
     TELEGRAM_VIDEO_URL,
     adminlist,
