@@ -36,7 +36,7 @@ async def init():
     for all_module in ALL_MODULES:
         importlib.import_module("IO.plugins" + all_module)
     LOGGER("IO.plugins").info("Successfully Imported Modules...")
-    await assistant.start()
+    await userbot.start()
     await IOMusic.start()
     try:
         await IOMusic.stream_call("https://graph.org/file/ec8a35dd5f1ef90947167.mp4")
