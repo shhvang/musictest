@@ -21,7 +21,7 @@ def get_image(videoid):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
     else:
-        return config.YOUTUBE_IMG_URL
+        return config.YOUTUBE_IMAGE
 
 
 def get_duration(playing):

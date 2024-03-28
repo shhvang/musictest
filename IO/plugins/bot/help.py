@@ -8,7 +8,7 @@ from IO.utils import help_pannel
 from IO.utils.database import get_lang
 from IO.utils.decorators.language import LanguageStart, languageCB
 from IO.utils.inline.menu import help_back_markup, private_help_panel
-from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
+from config import BANNED_USERS, START_IMAGE, SUPPORT_CHAT
 from Locales import get_string, menu
 
 
@@ -39,7 +39,7 @@ async def helper_private(
         _ = get_string(language)
         keyboard = help_pannel(_)
         await update.reply_photo(
-            photo=START_IMG_URL,
+            photo=START_IMAGE,
             caption=_["help_1"].format("https://t.me/IOSupportChat"),
             reply_markup=keyboard,
         )

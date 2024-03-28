@@ -8,7 +8,7 @@ from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
                  ImageFont, ImageOps)
 from youtubesearchpython.__future__ import VideosSearch
 
-from config import YOUTUBE_IMG_URL
+from config import YOUTUBE_IMAGE
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -140,4 +140,4 @@ async def get_thumb(videoid):
         background.save(f"cache/{videoid}.png")
         return f"cache/{videoid}.png"
     except Exception:
-        return YOUTUBE_IMG_URL
+        return YOUTUBE_IMAGE

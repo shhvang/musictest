@@ -8,7 +8,7 @@ from Core.call import IOMusic
 from IO.utils import bot_sys_stats
 from IO.utils.decorators.language import language
 from IO.utils.inline import supp_markup
-from config import BANNED_USERS, PING_IMG_URL
+from config import BANNED_USERS, PING_IMAGE
 
 
 @app.on_message(filters.command(["ping", "alive"]) & ~BANNED_USERS)
@@ -16,7 +16,7 @@ from config import BANNED_USERS, PING_IMG_URL
 async def ping_com(client, message: Message, _):
     start = datetime.now()
     response = await message.reply_photo(
-        photo=PING_IMG_URL,
+        photo=PING_IMAGE,
         caption=_["ping_1"].format(app.mention),
     )
     pytgping = await IOMusic.ping()

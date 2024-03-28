@@ -21,7 +21,7 @@ from IO.utils.database import (
     is_maintenance,
 )
 from IO.utils.inline import botplaylist_markup
-from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
+from config import PLAY_IMAGE, SUPPORT_CHAT, adminlist
 from Locales import get_string
 
 links = {}
@@ -73,7 +73,7 @@ def PlayWrapper(command):
                     return await message.reply_text(_["str_1"])
                 buttons = botplaylist_markup(_)
                 return await message.reply_photo(
-                    photo=PLAYLIST_IMG_URL,
+                    photo=PLAY_IMAGE,
                     caption=_["play_18"],
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
