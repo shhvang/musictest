@@ -1,11 +1,9 @@
 from .userbot import *
-from .call import *
 from .dir import *
 from .git import *
 from .bot import *
 from .logging import *
 from .misc import dbb, heroku, sudo
-from .mongo import *
 
 dirr()
 git()
