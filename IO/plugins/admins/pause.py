@@ -22,5 +22,12 @@ async def handle_message(cli, message: Message, _):
     await music_off(chat_id)
     await IOMusic.pause_stream(chat_id)
     await message.reply_text(
-        _[admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
+        _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
+
+print("Checking message text:", message.text)
+if text in ("hey io pause", "hey io cpause") or text.lower().startswith(("/pause", "/cpause")):
+  print("Trigger detected!")
+  # Rest of your code
+else:
+  print("No trigger detected.")
