@@ -16,7 +16,7 @@ async def handle_message(cli, message: Message, _):
   text = message.text.lower()  # Convert message text to lowercase for case-insensitive comparison
 
   # Check for custom triggers (modify triggers as needed)
-  if text in ("hey io pause", "hey io cpause") or text.lower().startswith(("/pause", "/cpause")):
+  if text.lower().startswith(("hey io pause", "hey io cpause", "/pause", "/cpause")):
     if not await is_music_playing(chat_id):
       return await message.reply_text(_["admin_1"])
     await music_off(chat_id)
@@ -24,10 +24,3 @@ async def handle_message(cli, message: Message, _):
     await message.reply_text(
         _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
-
-print("Checking message text:", message.text)
-if text in ("hey io pause", "hey io cpause") or text.lower().startswith(("/pause", "/cpause")):
-  print("Trigger detected!")
-  # Rest of your code
-else:
-  print("No trigger detected.")
