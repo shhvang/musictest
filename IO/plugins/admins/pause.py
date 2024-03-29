@@ -9,18 +9,15 @@ from IO.utils.inline import close_markup
 from config import BANNED_USERS
 
 
-@app.on_message(filters.text & filters.group & ~BANNED_USERS)
+@app.on_message(filters.text([r"hey io pause"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["pause", "cpause"]) & filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def handle_message(cli, message: Message, _):
-  chat_id = message.chat.id
-  text = message.text.lower()  # Convert message text to lowercase for case-insensitive comparison
-
-  # Check for custom triggers (modify triggers as needed)
-  if text.lower().startswith(("hey io pause", "hey io cpause", "/pause", "/cpause")):
+    chat_id = message.chat.id
     if not await is_music_playing(chat_id):
-      return await message.reply_text(_["admin_1"])
+        return await message.reply_text(_["admin_1"])
     await music_off(chat_id)
     await IOMusic.pause_stream(chat_id)
     await message.reply_text(
-        _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
+    _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
