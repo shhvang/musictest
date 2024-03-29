@@ -10,7 +10,7 @@ git()
 dbb()
 heroku()
 
-app = IOS()
+app = IOST()
 userbot = Userbot()
 
 from .platforms import *

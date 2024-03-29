@@ -5,7 +5,7 @@ from pyrogram.enums import ChatMemberStatus, ParseMode
 
 import config
 
-class IOS(Client):
+class IOST(Client):
     def __init__(self):
         LOGGER(__name__).info("Initializing IO Music Bot...")
         super().__init__(
