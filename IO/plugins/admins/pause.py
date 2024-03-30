@@ -15,18 +15,16 @@ def pause_message(client: Client, message: Message):
     else:
         return False
 
-@app.on_message(filters.command(["pause", "cpause"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def pause_admin(cli, message: Message, _):
-    chat_id = message.chat.id
-    if not await is_music_playing(chat_id):
-        return await message.reply_text(_["admin_1"])
-    await music_off(chat_id)
-    await IOMusic.pause_stream(chat_id)
-    await message.reply_text(
-    _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
-    )
+     if message.command[0] == 'pause' or 'cpause':
+        chat_id = message.chat.id
+        if not await is_music_playing(chat_id):
+            return await message.reply_text(_["admin_1"])
+        await music_off(chat_id)
+        await IOMusic.pause_stream(chat_id)
+        await message.reply_text(
+        _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
+        )
 
-async def test(cli, message: Message):
-    if message.text == "Hello":
-        await message.reply_text("Hello, How are you?")

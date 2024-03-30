@@ -124,7 +124,7 @@ def AdminRightsCheck(mystic):
                 "shuffle": "shuffle",
                 "end": "end",
                 "resume": "resume",
-
+                "loop": "loop",
                 # ... add more phrases here ...
             }
 
