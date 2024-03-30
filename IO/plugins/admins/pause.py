@@ -8,13 +8,6 @@ from IO.utils.decorators import AdminRightsCheck
 from IO.utils.inline import close_markup
 from config import BANNED_USERS
 
-def pause_message(client: Client, message: Message): 
-    if message.text.lower() == "hey io pause":
-        reply_message = message.reply_to_message
-        return reply_message
-    else:
-        return False
-
 @app.on_message(filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def pause_admin(cli, message: Message, _):
