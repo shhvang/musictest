@@ -1,5 +1,5 @@
 from pyrogram.enums import ChatType
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from Core import app
 from Core.misc import SUDOERS, db
@@ -107,7 +107,7 @@ def ActualAdminCB(mystic):
     return wrapper
 
 def AdminRightsCheck(mystic):
-    async def wrapper(client, message):
+    async def wrapper(client, message: Message):
         # Convert the message to lower case
         lower_message = message.text.lower()
 
