@@ -108,6 +108,35 @@ def ActualAdminCB(mystic):
 
 def AdminRightsCheck(mystic):
     async def wrapper(client, message):
+        # Convert the message to lower case
+        lower_message = message.text.lower()
+
+        # Check if the message starts with "hey io"
+        if lower_message.startswith("hey io"):
+            # Extract the command from the message
+            command = lower_message.split(" ", 2)[2].split(" ")[0]
+
+            # Map phrases to commands
+            phrase_to_command = {
+                "pause": "pause",
+                "seek": "seek",
+                "skip": "skip",
+                "shuffle": "shuffle",
+                "end": "end",
+                "resume": "resume",
+
+                # ... add more phrases here ...
+            }
+
+            # If the command is recognized, replace the message's command with it
+            if command in phrase_to_command:
+                message.command = [phrase_to_command[command]]
+        else:
+            # If the message starts with '/', it's a command
+            if lower_message.startswith("/"):
+                message.command = [lower_message[1:]]
+
+        # Existing code
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
@@ -197,7 +226,7 @@ Refresh admin cache by : /reload
                         else:
                             return await message.reply_text(_["admin_14"])
 
-        return await mystic(client, message, _, chat_id)
+        return await mystic(client, message)
 
     return wrapper
 
