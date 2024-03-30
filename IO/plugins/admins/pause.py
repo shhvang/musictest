@@ -26,3 +26,7 @@ async def pause_admin(cli, message: Message, _):
     await message.reply_text(
     _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
+
+async def test(cli, message: Message):
+    if message.text == "Hello":
+        await message.reply_text("Hello, How are you?")
